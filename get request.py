@@ -35,3 +35,9 @@ for x in h.headers:
 print("**********")
 
 # modify the headers user-agent
+headers ={
+    'User-Agent': input('Enter User-Agent:')
+}
+
+rh = requests.get(url,headers=headers)
+print(rh.text)
