@@ -38,6 +38,6 @@ print("**********")
 headers = {
     'User-Agent': input('Enter User-Agent:')
 }
-
-rh = requests.get(url, headers=headers)
+url2 = 'http://172.18.58.238/headers.php'
+rh = requests.get(url2, headers=headers)
 print(rh.text)
