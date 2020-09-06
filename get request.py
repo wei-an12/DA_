@@ -10,34 +10,34 @@ dt_string = now.strftime("%d-%b %H:%M:%S")
 # user input website of their choice
 url = input('Enter a url:')
 time.sleep(0.5)
-print('\n  Target url:',url)
+print('\n  Target url:', url)
 print('Time started:', dt_string)
 
 # print the full page
 r = requests.get(url)
 print("\nGetting request...")
 time.sleep(2)
-print('\n',r.text)
+print('\n', r.text)
 
 # print the status code
 print("\nStatus code:")
-print("\t *",r.status_code)
+print("\t *", r.status_code)
 time.sleep(2)
 
 # printing the header
 h = requests.head(url)
-print ("\nHeader:")
+print("\nHeader:")
 print("**********")
 
 # to print line by line
 for x in h.headers:
-    print("\t",x,".",h.headers[x])
+    print("\t", x, ".", h.headers[x])
 print("**********")
 
 # modify the headers user-agent
-headers ={
+headers = {
     'User-Agent': input('Enter User-Agent:')
 }
 
-rh = requests.get(url,headers=headers)
+rh = requests.get(url, headers=headers)
 print(rh.text)
